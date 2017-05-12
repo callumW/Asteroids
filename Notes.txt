@@ -1,0 +1,16 @@
+Notes.txt
+---------
+Radar is a game where you control a submarine but you only see a radar screen.
+
+Goal:
+-----
+Get a working prototype of the radar screen and how it could work with a game
+world.
+
+To Do:
+------
+-Make radar into a circle.
+-Make it so radar speed is defined by how long it should take to reach the
+    bottom of the screen.
+-Work out how to draw text. (FreeType?)
+-Set up a version system.

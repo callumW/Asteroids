@@ -1,0 +1,31 @@
+# CMake generation dependency list for this directory.
+C:/Users/Callum/Asteroids/CMakeLists.txt
+C:/Users/Callum/Asteroids/build/CMakeFiles/3.7.1/CMakeSystem.cmake
+C:/Program Files/CMake/share/cmake-3.7/Modules/CMakeSystemSpecificInitialize.cmake
+C:/Users/Callum/Asteroids/build/CMakeFiles/3.7.1/CMakeCCompiler.cmake
+C:/Program Files/CMake/share/cmake-3.7/Modules/CMakeSystemSpecificInformation.cmake
+C:/Program Files/CMake/share/cmake-3.7/Modules/CMakeGenericSystem.cmake
+C:/Program Files/CMake/share/cmake-3.7/Modules/Platform/Windows.cmake
+C:/Program Files/CMake/share/cmake-3.7/Modules/Platform/WindowsPaths.cmake
+C:/Program Files/CMake/share/cmake-3.7/Modules/CMakeCInformation.cmake
+C:/Program Files/CMake/share/cmake-3.7/Modules/CMakeLanguageInformation.cmake
+C:/Program Files/CMake/share/cmake-3.7/Modules/Platform/Windows-MSVC-C.cmake
+C:/Program Files/CMake/share/cmake-3.7/Modules/Platform/Windows-MSVC.cmake
+C:/Users/Callum/Asteroids/build/CMakeFiles/3.7.1/CMakeRCCompiler.cmake
+C:/Program Files/CMake/share/cmake-3.7/Modules/CMakeRCInformation.cmake
+C:/Program Files/CMake/share/cmake-3.7/Modules/CMakeCommonLanguageInclude.cmake
+C:/Users/Callum/Asteroids/cmake/Modules/FindSDL2.cmake
+C:/Program Files/CMake/share/cmake-3.7/Modules/FindThreads.cmake
+C:/Program Files/CMake/share/cmake-3.7/Modules/CheckLibraryExists.cmake
+C:/Program Files/CMake/share/cmake-3.7/Modules/CheckSymbolExists.cmake
+C:/Program Files/CMake/share/cmake-3.7/Modules/CheckIncludeFile.cmake
+C:/Program Files/CMake/share/cmake-3.7/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.7/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-3.7/Modules/CMakeParseArguments.cmake
+C:/Program Files/CMake/share/cmake-3.7/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.7/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-3.7/Modules/CMakeParseArguments.cmake
+C:/Program Files/CMake/share/cmake-3.7/Modules/FindOpenGL.cmake
+C:/Program Files/CMake/share/cmake-3.7/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.7/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-3.7/Modules/CMakeParseArguments.cmake
