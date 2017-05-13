@@ -1,37 +1,37 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="F:\code\Asteroids\src\Draw.c">
+    <ClCompile Include="C:\Users\Callum\Asteroids\src\Draw.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\code\Asteroids\src\Game.c">
+    <ClCompile Include="C:\Users\Callum\Asteroids\src\Game.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\code\Asteroids\src\HUD.c">
+    <ClCompile Include="C:\Users\Callum\Asteroids\src\HUD.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\code\Asteroids\src\Input_handling.c">
+    <ClCompile Include="C:\Users\Callum\Asteroids\src\Input_handling.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\code\Asteroids\src\Missile_List.c">
+    <ClCompile Include="C:\Users\Callum\Asteroids\src\Missile_List.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\code\Asteroids\src\Settings.c">
+    <ClCompile Include="C:\Users\Callum\Asteroids\src\Settings.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\code\Asteroids\src\Window.c">
+    <ClCompile Include="C:\Users\Callum\Asteroids\src\Window.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\code\Asteroids\src\main.c">
+    <ClCompile Include="C:\Users\Callum\Asteroids\src\main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="F:\code\Asteroids\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\Callum\Asteroids\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{13F0124A-3340-3F14-8F2A-C0F108E1C954}</UniqueIdentifier>
+      <UniqueIdentifier>{C345B2AA-16CF-3A0C-8CE8-B29979C21CEB}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

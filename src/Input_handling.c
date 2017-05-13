@@ -47,6 +47,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #include "Input_handling.h"
 #include "HUD.h"
 #include "SDL.h"
+#include "Game.h"
 
 BOOL g_running = 1;
 int g_mouse_x = 0;
@@ -68,12 +69,30 @@ void handle_input()
 
             }
         }
-        else if (e.type == SDL_MOUSEMOTION) {
+        else if (e.type == SDL_MOUSEMOTION) 
+        {
             SDL_GetMouseState(&g_mouse_x, &g_mouse_y);
             update_mouse_pointer();
         }
+        if (e.type == SDL_MOUSEBUTTONUP)
+        {
+            if (e.button.button == SDL_BUTTON_LEFT)
+            {
+                //fire missile !
+            }
+        }
         else if (e.type == SDL_QUIT) {
             g_running = 0;
+        }
+
+        if (e.type == SDL_MOUSEBUTTONUP)
+        {
+            if (e.button.button == SDL_BUTTON_LEFT)
+            {
+                //fire missile!
+                printf("Mouse clicked!\n");
+                fire_missile(0, (float)g_mouse_x, (float)g_mouse_y, 0.0f, 0.0f);
+            }
         }
     }
 }

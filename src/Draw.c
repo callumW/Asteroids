@@ -106,7 +106,8 @@ void draw_missiles()
         x2 = current_missile->missile->x;
         y2 = current_missile->missile->y;
 
-        draw_line((int) x1, (int) y1, (int) x2, (int) y2);
+        //draw_line((int) x1, (int) y1, (int) x2, (int) y2);
+        draw_linef(x1, y1, x2, y2);
         draw_line(0, 0, 10, 10);
         current_missile = current_missile->next;
     }

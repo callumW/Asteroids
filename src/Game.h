@@ -105,4 +105,9 @@ void update_missiles();
     Update the exposions
 */
 void update_explosions();
+
+/*
+    Fire a missile!
+*/
+void fire_missile(int id, float target_x, float target_y, float origin_x, float origin_y);
 #endif

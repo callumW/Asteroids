@@ -156,3 +156,11 @@ void update_explosions()
 {
 
 }
+
+void fire_missile(int id, float target_x, float target_y, float origin_x, float origin_y)
+{
+    float angle = atan((double)(target_y - origin_y) / (target_x - origin_x));
+
+
+    add_missile(origin_x, origin_y, angle, (g_current_time - g_previous_time), (g_current_time - g_previous_time) + 500, 10, id);
+}
