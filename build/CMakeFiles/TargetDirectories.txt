@@ -1,3 +1,0 @@
-C:/Users/Callum/Asteroids/build/CMakeFiles/Asteroids.dir
-C:/Users/Callum/Asteroids/build/CMakeFiles/ALL_BUILD.dir
-C:/Users/Callum/Asteroids/build/CMakeFiles/ZERO_CHECK.dir
