@@ -56,6 +56,8 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 void draw_line(int x1, int y1, int x2, int y2);
 
+void draw_linef(float x1, float y1, float x2, float y2);
+
 /*
     Normalise specifed y coordinate to the openGL systems
     \param y The y coordinate
@@ -63,10 +65,20 @@ void draw_line(int x1, int y1, int x2, int y2);
 */
 inline float normalise_y(int y);
 
+inline float normalise_yf(float y);
+
 /*
     Normalise the specified x coordinate to the openGl system
     \param x The x coordinate
     \return the normalised version
 */
 inline float normalise_x(int x);
+
+inline float normalise_xf(float x);
+
+/*
+    Draw game missiles
+*/
+void draw_missiles();
+
 #endif

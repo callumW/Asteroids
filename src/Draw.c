@@ -45,6 +45,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
               \_____|\__,_|_| |_| |_|\___||___/
 */
 #include "Draw.h"
+#include "Missile_List.h"
 
 void draw_line(int x1, int y1, int x2, int y2)
 {
@@ -55,10 +56,26 @@ void draw_line(int x1, int y1, int x2, int y2)
         glVertex2i(x2, y2);
     glEnd();
 }
+void draw_linef(float x1, float y1, float x2, float y2)
+{
+    glBegin(GL_LINES);
+        //glVertex2f(normalise_xf(x1), normalise_yf(y1));
+        //glVertex2f(normalise_xf(x2), normalise_yf(y2));
+        glVertex2f(x1, y1);
+        glVertex2f(x2, y2);
+    glEnd();
+}
 
 float normalise_y(int y)
 {
     if (y == 0)
+        return 1.0f;
+    return 1.0f - (y*2.0f / gc_win_height);
+}
+
+float normalise_yf(float y)
+{
+    if (y == 0.0f)
         return 1.0f;
     return 1.0f - (y*2.0f / gc_win_height);
 }
@@ -68,4 +85,29 @@ float normalise_x(int x)
     if (x == 0)
         return -1.0f;
     return (x*2.0f / gc_win_width) - 1.0f;
+}
+
+float normalise_xf(float x)
+{
+    if (x == 0.0f)
+        return -1.0f;
+    return (x*2.0f / gc_win_width) - 1.0f;
+}
+
+void draw_missiles()
+{
+    struct Missile_Node* current_missile = get_head();
+    float x1, y1, x2, y2;
+    while (current_missile != NULL)
+    {
+        x1 = current_missile->missile->start_x;
+        y1 = current_missile->missile->start_y;
+
+        x2 = current_missile->missile->x;
+        y2 = current_missile->missile->y;
+
+        draw_line((int) x1, (int) y1, (int) x2, (int) y2);
+        draw_line(0, 0, 10, 10);
+        current_missile = current_missile->next;
+    }
 }

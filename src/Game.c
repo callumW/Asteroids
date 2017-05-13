@@ -52,6 +52,9 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #include "Draw.h"
 #include "Missile.h"
 #include "Explosion.h"
+#include "Missile_List.h"
+
+#include <math.h>
 
 long g_previous_time = 0;
 long g_current_time = 0;
@@ -66,7 +69,7 @@ BOOL g_scanning = FALSE;
 
 void draw_all()
 {
-	float r, g, b;
+    float r, g, b;
     glClear(GL_COLOR_BUFFER_BIT);
     r = (float) g_border_color.r / 255;
     g = (float) g_border_color.g / 255;
@@ -74,12 +77,14 @@ void draw_all()
     glColor3f(r, g, b);
     //draw_line(0, 0, 20, 20);
     draw_hud();
+    draw_missiles();
 }
 
 void update()
 {
     g_frames++;
     update_radar_beam();
+    update_missiles();
 }
 
 void init_timers()
@@ -108,16 +113,44 @@ void update_radar_beam()
         }
     }
     else {
-        if (g_current_time - g_last_scan_end > gc_radar_beam_delay)
+        //if (g_current_time - g_last_scan_end > gc_radar_beam_delay)
             //g_scanning = TRUE;
         g_scan_start_time = SDL_GetTicks();
     }
 }
 
+void update_missile(struct Missile* missile)
+{
+    //printf("updating a missile\n");
+    
+    //work out location
+    float next_x, next_y;
+    next_x = cosf(missile->angle) * 0.01f * (g_current_time - g_previous_time);
+    next_y = sinf(missile->angle) * 0.01f * (g_current_time - g_previous_time);
+
+    //update location
+    missile->x += next_x;
+    missile->y += next_y;
+
+    printf("moved missile to: %f, %f\n", next_x, next_y);
+
+    //check if exploded
+        //create explosion and delete missile
+}
+
 void update_missiles()
 {
-
+    //printf("Updating missiles\n");
+    struct Missile_Node* current_missile = get_head();
+    
+    while (current_missile != NULL)
+    {
+        update_missile(current_missile->missile);
+        current_missile = current_missile->next;
+    }
 }
+
+
 
 void update_explosions()
 {

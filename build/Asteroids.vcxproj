@@ -19,7 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGUID>{88980A15-9CFF-32F1-81CA-5D582540B0C8}</ProjectGUID>
+    <ProjectGUID>{B3E63E52-414B-30C8-96A9-91BCAA2799EE}</ProjectGUID>
+    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
     <Keyword>Win32Proj</Keyword>
     <Platform>Win32</Platform>
     <ProjectName>Asteroids</ProjectName>
@@ -58,25 +59,25 @@
   <PropertyGroup Label="UserMacros" />
     <PropertyGroup>
       <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-      <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\Callum\Asteroids\build\Debug\</OutDir>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">F:\code\Asteroids\build\Debug\</OutDir>
       <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Asteroids.dir\Debug\</IntDir>
       <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Asteroids</TargetName>
       <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.exe</TargetExt>
       <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
       <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
-      <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\Callum\Asteroids\build\Release\</OutDir>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">F:\code\Asteroids\build\Release\</OutDir>
       <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Asteroids.dir\Release\</IntDir>
       <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Asteroids</TargetName>
       <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.exe</TargetExt>
       <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
       <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
-      <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\Callum\Asteroids\build\MinSizeRel\</OutDir>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">F:\code\Asteroids\build\MinSizeRel\</OutDir>
       <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Asteroids.dir\MinSizeRel\</IntDir>
       <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Asteroids</TargetName>
       <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.exe</TargetExt>
       <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkIncremental>
       <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</GenerateManifest>
-      <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\Callum\Asteroids\build\RelWithDebInfo\</OutDir>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">F:\code\Asteroids\build\RelWithDebInfo\</OutDir>
       <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Asteroids.dir\RelWithDebInfo\</IntDir>
       <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Asteroids</TargetName>
       <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.exe</TargetExt>
@@ -86,7 +87,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <AdditionalOptions> -g %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>C:\SDL2-2.0.5\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>Debug/</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <CompileAs>CompileAsC</CompileAs>
@@ -103,10 +104,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\SDL2-2.0.5\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\SDL2-2.0.5\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -115,12 +116,12 @@
     </Midl>
     <Link>
       <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;C:\SDL2-2.0.5\lib\x86\SDL2.lib;glu32.lib;opengl32.lib</AdditionalDependencies>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;C:\SDL2\lib\SDL2main.lib;C:\SDL2\lib\SDL2.lib;glu32.lib;opengl32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>Debug</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>C:/Users/Callum/Asteroids/build/Debug/Asteroids.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/Users/Callum/Asteroids/build/Debug/Asteroids.pdb</ProgramDataBaseFile>
+      <ImportLibrary>F:/code/Asteroids/build/Debug/Asteroids.lib</ImportLibrary>
+      <ProgramDataBaseFile>F:/code/Asteroids/build/Debug/Asteroids.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
       <Version></Version>
     </Link>
@@ -131,7 +132,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <AdditionalOptions> -g %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>C:\SDL2-2.0.5\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>Release/</AssemblerListingLocation>
       <CompileAs>CompileAsC</CompileAs>
       <ExceptionHandling>
@@ -147,10 +148,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\SDL2-2.0.5\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\SDL2-2.0.5\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -159,12 +160,12 @@
     </Midl>
     <Link>
       <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;C:\SDL2-2.0.5\lib\x86\SDL2.lib;glu32.lib;opengl32.lib</AdditionalDependencies>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;C:\SDL2\lib\SDL2main.lib;C:\SDL2\lib\SDL2.lib;glu32.lib;opengl32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>No</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>C:/Users/Callum/Asteroids/build/Release/Asteroids.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/Users/Callum/Asteroids/build/Release/Asteroids.pdb</ProgramDataBaseFile>
+      <ImportLibrary>F:/code/Asteroids/build/Release/Asteroids.lib</ImportLibrary>
+      <ProgramDataBaseFile>F:/code/Asteroids/build/Release/Asteroids.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
       <Version></Version>
     </Link>
@@ -175,7 +176,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
     <ClCompile>
       <AdditionalOptions> -g %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>C:\SDL2-2.0.5\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
       <CompileAs>CompileAsC</CompileAs>
       <ExceptionHandling>
@@ -191,10 +192,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\SDL2-2.0.5\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\SDL2-2.0.5\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -203,12 +204,12 @@
     </Midl>
     <Link>
       <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;C:\SDL2-2.0.5\lib\x86\SDL2.lib;glu32.lib;opengl32.lib</AdditionalDependencies>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;C:\SDL2\lib\SDL2main.lib;C:\SDL2\lib\SDL2.lib;glu32.lib;opengl32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>No</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>C:/Users/Callum/Asteroids/build/MinSizeRel/Asteroids.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/Users/Callum/Asteroids/build/MinSizeRel/Asteroids.pdb</ProgramDataBaseFile>
+      <ImportLibrary>F:/code/Asteroids/build/MinSizeRel/Asteroids.lib</ImportLibrary>
+      <ProgramDataBaseFile>F:/code/Asteroids/build/MinSizeRel/Asteroids.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
       <Version></Version>
     </Link>
@@ -219,7 +220,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
     <ClCompile>
       <AdditionalOptions> -g %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>C:\SDL2-2.0.5\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
       <CompileAs>CompileAsC</CompileAs>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -235,10 +236,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\SDL2-2.0.5\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\SDL2-2.0.5\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -247,12 +248,12 @@
     </Midl>
     <Link>
       <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;C:\SDL2-2.0.5\lib\x86\SDL2.lib;glu32.lib;opengl32.lib</AdditionalDependencies>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;C:\SDL2\lib\SDL2main.lib;C:\SDL2\lib\SDL2.lib;glu32.lib;opengl32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>Debug</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>C:/Users/Callum/Asteroids/build/RelWithDebInfo/Asteroids.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/Users/Callum/Asteroids/build/RelWithDebInfo/Asteroids.pdb</ProgramDataBaseFile>
+      <ImportLibrary>F:/code/Asteroids/build/RelWithDebInfo/Asteroids.lib</ImportLibrary>
+      <ProgramDataBaseFile>F:/code/Asteroids/build/RelWithDebInfo/Asteroids.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
       <Version></Version>
     </Link>
@@ -261,10 +262,10 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\Callum\Asteroids\CMakeLists.txt">
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/Users/Callum/Asteroids/CMakeLists.txt</Message>
+    <CustomBuild Include="F:\code\Asteroids\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule F:/code/Asteroids/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/Callum/Asteroids -BC:/Users/Callum/Asteroids/build --check-stamp-file C:\Users\Callum\Asteroids\build\CMakeFiles\generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -HF:/code/Asteroids -BF:/code/Asteroids/build --check-stamp-file F:\code\Asteroids\build\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -272,12 +273,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/Users/Callum/Asteroids/CMakeLists.txt;C:\Users\Callum\Asteroids\CMakeLists.txt;C:\Users\Callum\Asteroids\build\CMakeFiles\3.7.1\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeSystemSpecificInitialize.cmake;C:\Users\Callum\Asteroids\build\CMakeFiles\3.7.1\CMakeCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC.cmake;C:\Users\Callum\Asteroids\build\CMakeFiles\3.7.1\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCommonLanguageInclude.cmake;C:\Users\Callum\Asteroids\cmake\Modules\FindSDL2.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeParseArguments.cmake;C:\Users\Callum\Asteroids\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\Callum\Asteroids\build\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">F:/code/Asteroids/CMakeLists.txt;F:\code\Asteroids\CMakeLists.txt;F:\code\Asteroids\build\CMakeFiles\3.6.1\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInitialize.cmake;F:\code\Asteroids\build\CMakeFiles\3.6.1\CMakeCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC.cmake;F:\code\Asteroids\build\CMakeFiles\3.6.1\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCommonLanguageInclude.cmake;F:\code\Asteroids\cmake\Modules\FindSDL2.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;F:\code\Asteroids\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">F:\code\Asteroids\build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/Users/Callum/Asteroids/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule F:/code/Asteroids/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/Callum/Asteroids -BC:/Users/Callum/Asteroids/build --check-stamp-file C:\Users\Callum\Asteroids\build\CMakeFiles\generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -HF:/code/Asteroids -BF:/code/Asteroids/build --check-stamp-file F:\code\Asteroids\build\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -285,12 +286,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/Users/Callum/Asteroids/CMakeLists.txt;C:\Users\Callum\Asteroids\CMakeLists.txt;C:\Users\Callum\Asteroids\build\CMakeFiles\3.7.1\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeSystemSpecificInitialize.cmake;C:\Users\Callum\Asteroids\build\CMakeFiles\3.7.1\CMakeCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC.cmake;C:\Users\Callum\Asteroids\build\CMakeFiles\3.7.1\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCommonLanguageInclude.cmake;C:\Users\Callum\Asteroids\cmake\Modules\FindSDL2.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeParseArguments.cmake;C:\Users\Callum\Asteroids\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\Callum\Asteroids\build\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">F:/code/Asteroids/CMakeLists.txt;F:\code\Asteroids\CMakeLists.txt;F:\code\Asteroids\build\CMakeFiles\3.6.1\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInitialize.cmake;F:\code\Asteroids\build\CMakeFiles\3.6.1\CMakeCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC.cmake;F:\code\Asteroids\build\CMakeFiles\3.6.1\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCommonLanguageInclude.cmake;F:\code\Asteroids\cmake\Modules\FindSDL2.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;F:\code\Asteroids\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">F:\code\Asteroids\build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule C:/Users/Callum/Asteroids/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule F:/code/Asteroids/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/Callum/Asteroids -BC:/Users/Callum/Asteroids/build --check-stamp-file C:\Users\Callum\Asteroids\build\CMakeFiles\generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -HF:/code/Asteroids -BF:/code/Asteroids/build --check-stamp-file F:\code\Asteroids\build\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -298,12 +299,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/Users/Callum/Asteroids/CMakeLists.txt;C:\Users\Callum\Asteroids\CMakeLists.txt;C:\Users\Callum\Asteroids\build\CMakeFiles\3.7.1\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeSystemSpecificInitialize.cmake;C:\Users\Callum\Asteroids\build\CMakeFiles\3.7.1\CMakeCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC.cmake;C:\Users\Callum\Asteroids\build\CMakeFiles\3.7.1\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCommonLanguageInclude.cmake;C:\Users\Callum\Asteroids\cmake\Modules\FindSDL2.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeParseArguments.cmake;C:\Users\Callum\Asteroids\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\Callum\Asteroids\build\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">F:/code/Asteroids/CMakeLists.txt;F:\code\Asteroids\CMakeLists.txt;F:\code\Asteroids\build\CMakeFiles\3.6.1\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInitialize.cmake;F:\code\Asteroids\build\CMakeFiles\3.6.1\CMakeCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC.cmake;F:\code\Asteroids\build\CMakeFiles\3.6.1\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCommonLanguageInclude.cmake;F:\code\Asteroids\cmake\Modules\FindSDL2.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;F:\code\Asteroids\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">F:\code\Asteroids\build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/Users/Callum/Asteroids/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule F:/code/Asteroids/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -HC:/Users/Callum/Asteroids -BC:/Users/Callum/Asteroids/build --check-stamp-file C:\Users\Callum\Asteroids\build\CMakeFiles\generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -HF:/code/Asteroids -BF:/code/Asteroids/build --check-stamp-file F:\code\Asteroids\build\CMakeFiles\generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -311,23 +312,24 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/Users/Callum/Asteroids/CMakeLists.txt;C:\Users\Callum\Asteroids\CMakeLists.txt;C:\Users\Callum\Asteroids\build\CMakeFiles\3.7.1\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeSystemSpecificInitialize.cmake;C:\Users\Callum\Asteroids\build\CMakeFiles\3.7.1\CMakeCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC.cmake;C:\Users\Callum\Asteroids\build\CMakeFiles\3.7.1\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeCommonLanguageInclude.cmake;C:\Users\Callum\Asteroids\cmake\Modules\FindSDL2.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.7\Modules\CMakeParseArguments.cmake;C:\Users\Callum\Asteroids\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\Callum\Asteroids\build\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">F:/code/Asteroids/CMakeLists.txt;F:\code\Asteroids\CMakeLists.txt;F:\code\Asteroids\build\CMakeFiles\3.6.1\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInitialize.cmake;F:\code\Asteroids\build\CMakeFiles\3.6.1\CMakeCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\Platform\Windows-MSVC.cmake;F:\code\Asteroids\build\CMakeFiles\3.6.1\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeCommonLanguageInclude.cmake;F:\code\Asteroids\cmake\Modules\FindSDL2.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.6\Modules\CMakeParseArguments.cmake;F:\code\Asteroids\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">F:\code\Asteroids\build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C:\Users\Callum\Asteroids\src\Draw.c"  />
-    <ClCompile Include="C:\Users\Callum\Asteroids\src\Game.c"  />
-    <ClCompile Include="C:\Users\Callum\Asteroids\src\HUD.c"  />
-    <ClCompile Include="C:\Users\Callum\Asteroids\src\Input_handling.c"  />
-    <ClCompile Include="C:\Users\Callum\Asteroids\src\Settings.c"  />
-    <ClCompile Include="C:\Users\Callum\Asteroids\src\Window.c"  />
-    <ClCompile Include="C:\Users\Callum\Asteroids\src\main.c"  />
+    <ClCompile Include="F:\code\Asteroids\src\Draw.c"  />
+    <ClCompile Include="F:\code\Asteroids\src\Game.c"  />
+    <ClCompile Include="F:\code\Asteroids\src\HUD.c"  />
+    <ClCompile Include="F:\code\Asteroids\src\Input_handling.c"  />
+    <ClCompile Include="F:\code\Asteroids\src\Missile_List.c"  />
+    <ClCompile Include="F:\code\Asteroids\src\Settings.c"  />
+    <ClCompile Include="F:\code\Asteroids\src\Window.c"  />
+    <ClCompile Include="F:\code\Asteroids\src\main.c"  />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:/Users/Callum/Asteroids/build/ZERO_CHECK.vcxproj">
-      <Project>1A19F0C4-F335-364A-AB79-13336FC42DF2</Project>
+    <ProjectReference Include="F:/code/Asteroids/build/ZERO_CHECK.vcxproj">
+      <Project>F8AAB855-48E2-3B75-AD9E-98C3A04A63E8</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

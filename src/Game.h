@@ -91,12 +91,18 @@ void update_timers();
 void update_radar_beam();
 
 /*
-	Update the missiles
+    Update an individual missile
+*/
+void update_missile(struct Missile* missile);
+
+
+/*
+    Update the missiles
 */
 void update_missiles();
 
 /*
-	Update the exposions
+    Update the exposions
 */
 void update_explosions();
 #endif

@@ -53,6 +53,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #include "HUD.h"
 #include "Bool.h"
 #include "Settings.h"
+#include "Missile_List.h"
 
 #include <stdio.h>
 
@@ -60,7 +61,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 int main(int argc, char** argv)
 {
-	int last_fps_check;
+    int last_fps_check;
     /*
     if (argc > 1) {
         int i = 0;
@@ -87,6 +88,12 @@ int main(int argc, char** argv)
     init_timers();
     init_hud();
 
+    /* Create a test missile */
+    if (add_missile(100.0f, 100.0f, 3.14f / 4.0f, g_current_time, 0, 0, 0) < 0)
+        printf("Failed to add missile\n");
+    else
+        printf("Successfully added missile!\n");
+
     last_fps_check = SDL_GetTicks();
     print_fps(999);
     while (g_running == TRUE) {
@@ -106,6 +113,6 @@ int main(int argc, char** argv)
         show_screen();
     }
 
-	SDL_Quit();
+    SDL_Quit();
     return 0;
 }
