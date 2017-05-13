@@ -27,5 +27,5 @@
 *.out
 *.app
 
-/[bB]uild
+/[bB]uild/
 
