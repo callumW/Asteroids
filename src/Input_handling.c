@@ -93,6 +93,11 @@ void handle_input()
                 printf("Mouse clicked!\n");
                 fire_missile(0, (float)g_mouse_x, (float)g_mouse_y, 0.0f, 0.0f);
             }
+
+            if (e.button.button == SDL_BUTTON_RIGHT)
+            {
+                unfire_missile();
+            }
         }
     }
 }

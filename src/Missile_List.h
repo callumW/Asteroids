@@ -18,5 +18,7 @@ int add_missile(float sx, float sy, float a, long ltime, long dtime, long eradiu
 struct Missile_Node* get_head();
 struct Missile_Node* get_tail();
 
+int remove_missile(struct Missile* mis);
+
 
 #endif

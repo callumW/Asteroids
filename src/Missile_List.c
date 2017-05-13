@@ -55,7 +55,38 @@ int add_missile(float sx, float sy, float a, long ltime, long dtime, long eradiu
 
 int remove_missile(struct Missile* mis)
 {
-    struct Missile* node
+
+    if (mis == NULL)
+        return -1;
+
+    struct Missile_Node* node = get_head();
+
+    while (node != NULL)
+    {
+        if (node->next != NULL)
+        {
+            if (node->next->missile == mis)
+            {            
+                struct Missile_Node* temp = node->next;
+
+                if (temp->next == NULL)
+                {
+                    //we need to update the tail too
+                    g_missile_tail = temp->next;
+                }
+
+                node->next = temp->next;
+
+                free(temp);
+            }
+        }
+        else
+        {
+            //we're at the tail
+        }
+
+        node = node->next;
+    }
 }
 
 struct Missile_Node* get_head()

@@ -164,3 +164,11 @@ void fire_missile(int id, float target_x, float target_y, float origin_x, float 
 
     add_missile(origin_x, origin_y, angle, (g_current_time - g_previous_time), (g_current_time - g_previous_time) + 500, 10, id);
 }
+
+void unfire_missile()
+{
+    struct Missile_Node* node = get_tail();
+
+    if (node != NULL)
+        remove_missile(node->missile);
+}

@@ -110,4 +110,9 @@ void update_explosions();
     Fire a missile!
 */
 void fire_missile(int id, float target_x, float target_y, float origin_x, float origin_y);
+
+/*
+    Unfire missile!
+*/
+void unfire_missile();
 #endif
