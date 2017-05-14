@@ -52,6 +52,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #include "Draw.h"
 #include "Missile.h"
 #include "Explosion.h"
+#include "Explosion_List.h"
 #include "Missile_List.h"
 
 #include <math.h>
@@ -78,6 +79,7 @@ void draw_all()
     //draw_line(0, 0, 20, 20);
     draw_hud();
     draw_missiles();
+    draw_explosions();
 }
 
 void update()
@@ -85,6 +87,7 @@ void update()
     g_frames++;
     update_radar_beam();
     update_missiles();
+    update_explosions();
 }
 
 void init_timers()
@@ -141,7 +144,7 @@ void update_missile(struct Missile* missile)
 void update_missiles()
 {
     //printf("Updating missiles\n");
-    struct Missile_Node* current_missile = get_head();
+    struct Missile_Node* current_missile = get_missile_head();
     
     while (current_missile != NULL)
     {
@@ -151,23 +154,51 @@ void update_missiles()
 }
 
 
+void update_explosion(struct Explosion* exp)
+{
+    //update the time to live?
+    //adjust radius based upon time
+
+    exp->time_to_live -= (g_current_time - g_previous_time);
+
+    if (exp->time_to_live < 0)
+    {
+        printf("removing explosion\n");
+        remove_explosion(exp);
+    }
+
+    exp->current_radius = exp->max_radius * (exp->time_to_live / 500.0);
+}
+
 
 void update_explosions()
 {
+    struct Explosion_Node* current_explosion = get_explosion_head();
 
+    while (current_explosion != NULL)
+    {
+        update_explosion(current_explosion->explosion);
+        current_explosion = current_explosion->next;
+    }
+    
 }
 
 void fire_missile(int id, float target_x, float target_y, float origin_x, float origin_y)
 {
-    float angle = atan((double)(target_y - origin_y) / (target_x - origin_x));
-
+    float angle = atan((double)((target_y - origin_y) / (target_x - origin_x)));
+    //angle is wrong...
+    if (target_x < origin_x && target_y < origin_y)
+    {
+        angle = atan((double)((origin_y - target_y) / (origin_x - target_x)));
+        angle -= 3.14;
+    }
 
     add_missile(origin_x, origin_y, angle, (g_current_time - g_previous_time), (g_current_time - g_previous_time) + 500, 10, id);
 }
 
 void unfire_missile()
 {
-    struct Missile_Node* node = get_tail();
+    struct Missile_Node* node = get_missile_tail();
 
     if (node != NULL)
         remove_missile(node->missile);

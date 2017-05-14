@@ -58,6 +58,8 @@ void draw_line(int x1, int y1, int x2, int y2);
 
 void draw_linef(float x1, float y1, float x2, float y2);
 
+void draw_circlef(float x, float y, float radius);
+
 /*
     Normalise specifed y coordinate to the openGL systems
     \param y The y coordinate
@@ -80,5 +82,7 @@ inline float normalise_xf(float x);
     Draw game missiles
 */
 void draw_missiles();
+
+void draw_explosions();
 
 #endif

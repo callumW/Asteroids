@@ -54,6 +54,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #include "Bool.h"
 #include "Settings.h"
 #include "Missile_List.h"
+#include "Explosion_List.h"
 
 #include <stdio.h>
 
@@ -88,11 +89,7 @@ int main(int argc, char** argv)
     init_timers();
     init_hud();
 
-    /* Create a test missile */
-    if (add_missile(100.0f, 100.0f, 3.14f / 4.0f, g_current_time, 0, 0, 0) < 0)
-        printf("Failed to add missile\n");
-    else
-        printf("Successfully added missile!\n");
+    add_explosion(40.0f, 40.0f, 30.0f, 500, 0);
 
     last_fps_check = SDL_GetTicks();
     print_fps(999);

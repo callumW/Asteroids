@@ -59,7 +59,7 @@ int remove_missile(struct Missile* mis)
     if (mis == NULL)
         return -1;
 
-    struct Missile_Node* node = get_head();
+    struct Missile_Node* node = get_missile_head();
 
     while (node != NULL)
     {
@@ -69,10 +69,11 @@ int remove_missile(struct Missile* mis)
             {            
                 struct Missile_Node* temp = node->next;
 
+                /* The node to be removed is the tail*/
                 if (temp->next == NULL)
                 {
                     //we need to update the tail too
-                    g_missile_tail = temp->next;
+                    g_missile_tail = node;
                 }
 
                 node->next = temp->next;
@@ -81,6 +82,12 @@ int remove_missile(struct Missile* mis)
                 return 0;
             }
         }
+        else
+        {
+            free(node);
+            g_missile_head = NULL;
+            g_missile_tail = NULL;
+        }
 
         node = node->next;
     }
@@ -88,12 +95,12 @@ int remove_missile(struct Missile* mis)
     return -1;
 }
 
-struct Missile_Node* get_head()
+struct Missile_Node* get_missile_head()
 {
 	return g_missile_head;
 }
 
-struct Missile_Node* get_tail()
+struct Missile_Node* get_missile_tail()
 {
 	return g_missile_tail;
 }

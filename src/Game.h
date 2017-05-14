@@ -101,6 +101,8 @@ void update_missile(struct Missile* missile);
 */
 void update_missiles();
 
+void update_explosion();
+
 /*
     Update the exposions
 */

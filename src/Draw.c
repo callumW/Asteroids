@@ -46,6 +46,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 #include "Draw.h"
 #include "Missile_List.h"
+#include "Explosion_List.h"
 
 void draw_line(int x1, int y1, int x2, int y2)
 {
@@ -63,6 +64,17 @@ void draw_linef(float x1, float y1, float x2, float y2)
         //glVertex2f(normalise_xf(x2), normalise_yf(y2));
         glVertex2f(x1, y1);
         glVertex2f(x2, y2);
+    glEnd();
+}
+
+void draw_circlef(float x, float y, float radius)
+{
+    int i;
+    glBegin(GL_LINE_LOOP);
+        for (i = 0; i < 360; i++)
+        {
+            glVertex2f(x + sin(i * (3.14 / 180)) * radius, y + cos(i * (3.14 / 180)) * radius);
+        }
     glEnd();
 }
 
@@ -96,7 +108,7 @@ float normalise_xf(float x)
 
 void draw_missiles()
 {
-    struct Missile_Node* current_missile = get_head();
+    struct Missile_Node* current_missile = get_missile_head();
     float x1, y1, x2, y2;
     while (current_missile != NULL)
     {
@@ -110,5 +122,21 @@ void draw_missiles()
         draw_linef(x1, y1, x2, y2);
         draw_line(0, 0, 10, 10);
         current_missile = current_missile->next;
+    }
+}
+
+void draw_explosions()
+{
+    struct Explosion_Node* current_explosion = get_explosion_head();
+    float x1, y1;
+    while (current_explosion != NULL)
+    {
+        x1 = current_explosion->explosion->x;
+        y1 = current_explosion->explosion->y;
+
+
+        draw_circlef(x1, y1, current_explosion->explosion->current_radius);
+        
+        current_explosion = current_explosion->next;
     }
 }

@@ -15,8 +15,8 @@ extern struct Missile_Node* g_missile_tail;
 
 struct Missile_Node* create_missile_node();
 int add_missile(float sx, float sy, float a, long ltime, long dtime, long eradius, int id);
-struct Missile_Node* get_head();
-struct Missile_Node* get_tail();
+struct Missile_Node* get_missile_head();
+struct Missile_Node* get_missile_tail();
 
 int remove_missile(struct Missile* mis);
 
