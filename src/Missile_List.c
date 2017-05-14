@@ -78,15 +78,14 @@ int remove_missile(struct Missile* mis)
                 node->next = temp->next;
 
                 free(temp);
+                return 0;
             }
-        }
-        else
-        {
-            //we're at the tail
         }
 
         node = node->next;
     }
+
+    return -1;
 }
 
 struct Missile_Node* get_head()
