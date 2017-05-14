@@ -65,6 +65,8 @@ extern int g_scan_start_time;
 extern int g_last_scan_end;
 extern BOOL g_scanning;
 
+extern float missile_speed;
+
 /*
     Draw everything that should be on screen, on screen.
 */
@@ -109,6 +111,11 @@ void update_explosion();
 void update_explosions();
 
 /*
+    remove expried explosions
+*/
+void cull_explosions();
+
+/*
     Fire a missile!
 */
 void fire_missile(int id, float target_x, float target_y, float origin_x, float origin_y);
@@ -117,4 +124,9 @@ void fire_missile(int id, float target_x, float target_y, float origin_x, float 
     Unfire missile!
 */
 void unfire_missile();
+
+/*
+    Remove expired missiles
+*/
+void cull_missiles();
 #endif

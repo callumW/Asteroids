@@ -2,6 +2,8 @@
 #ifndef MISSILE_H
 #define MISSILE_H
 
+#include "Bool.h"
+
 struct Missile
 {
     float start_x;
@@ -15,6 +17,8 @@ struct Missile
     long detination_time;
     float explosion_radius;
     int firing_id;	//who fired the missile? 0, for player, 1 for computer
+
+    BOOL alive;
 };
 
 #endif

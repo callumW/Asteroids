@@ -68,6 +68,8 @@ int g_scan_start_time = 0;
 int g_last_scan_end = 0;
 BOOL g_scanning = FALSE;
 
+float missile_speed = 0.1f;
+
 void draw_all()
 {
     float r, g, b;
@@ -128,17 +130,22 @@ void update_missile(struct Missile* missile)
     
     //work out location
     float next_x, next_y;
-    next_x = cosf(missile->angle) * 0.01f * (g_current_time - g_previous_time);
-    next_y = sinf(missile->angle) * 0.01f * (g_current_time - g_previous_time);
+    next_x = cosf(missile->angle) * missile_speed * (g_current_time - g_previous_time);
+    next_y = sinf(missile->angle) * missile_speed * (g_current_time - g_previous_time);
 
     //update location
     missile->x += next_x;
     missile->y += next_y;
 
-    printf("moved missile to: %f, %f\n", next_x, next_y);
+    //printf("moved missile to: %f, %f\n", next_x, next_y);
 
     //check if exploded
         //create explosion and delete missile
+    if (missile->detination_time < g_current_time)
+    {
+        missile->alive = FALSE;
+        add_explosion(missile->x, missile->y,  missile->explosion_radius, 350, 0);
+    }
 }
 
 void update_missiles()
@@ -151,6 +158,8 @@ void update_missiles()
         update_missile(current_missile->missile);
         current_missile = current_missile->next;
     }
+
+    cull_missiles();
 }
 
 
@@ -161,13 +170,12 @@ void update_explosion(struct Explosion* exp)
 
     exp->time_to_live -= (g_current_time - g_previous_time);
 
+    exp->current_radius = exp->max_radius * ( 1.0f - (exp->time_to_live / 500.0));
+
     if (exp->time_to_live < 0)
     {
-        printf("removing explosion\n");
-        remove_explosion(exp);
+        exp->alive = FALSE;
     }
-
-    exp->current_radius = exp->max_radius * (exp->time_to_live / 500.0);
 }
 
 
@@ -181,6 +189,25 @@ void update_explosions()
         current_explosion = current_explosion->next;
     }
     
+    cull_explosions();
+}
+
+void cull_explosions()
+{
+    struct Explosion_Node* current_explosion = get_explosion_head();
+    struct Explosion_Node* next_explosion = NULL;
+
+    while (current_explosion != NULL)
+    {
+        next_explosion = current_explosion->next;
+        if (current_explosion->explosion->alive == FALSE)
+        {
+            remove_explosion(current_explosion->explosion);
+        }
+
+        current_explosion = next_explosion;
+
+    }
 }
 
 void fire_missile(int id, float target_x, float target_y, float origin_x, float origin_y)
@@ -193,7 +220,10 @@ void fire_missile(int id, float target_x, float target_y, float origin_x, float 
         angle -= 3.14;
     }
 
-    add_missile(origin_x, origin_y, angle, (g_current_time - g_previous_time), (g_current_time - g_previous_time) + 500, 10, id);
+    float dist = sqrtf((target_x - origin_x) * (target_x - origin_x) + (target_y - origin_y)*(target_y - origin_y));
+    float time = dist / missile_speed;
+
+    add_missile(origin_x, origin_y, angle, g_current_time, g_current_time + time, 60, id);
 }
 
 void unfire_missile()
@@ -202,4 +232,21 @@ void unfire_missile()
 
     if (node != NULL)
         remove_missile(node->missile);
+}
+
+void cull_missiles()
+{
+    struct Missile_Node* current_missile = get_missile_head();
+    struct Missile_Node* next_missile = NULL;
+
+    while (current_missile != NULL)
+    {
+        next_missile = current_missile->next;
+        if (current_missile->missile->alive == FALSE)
+        {
+            remove_missile(current_missile->missile);
+        }
+
+        current_missile = next_missile;
+    }
 }

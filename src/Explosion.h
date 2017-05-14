@@ -1,6 +1,8 @@
 #ifndef EXPLOSION_H
 #define EXPLOSION_H
 
+#include "Bool.h"
+
 struct Explosion
 {
 	float x;
@@ -13,6 +15,8 @@ struct Explosion
 	long spawn_time;
 
 	int firing_id;
+
+    BOOL alive;
 };
 
 

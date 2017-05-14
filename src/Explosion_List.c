@@ -39,6 +39,7 @@ int add_explosion(float x, float y, float max_r, long life_span, int id)
     node->explosion->time_to_live = life_span;
     node->explosion->spawn_time = g_current_time;
     node->explosion->firing_id = id;
+    node->explosion->alive = TRUE;
 
     node->next = NULL;
     
@@ -62,7 +63,7 @@ struct Explosion_Node* get_explosion_head()
 
 struct Explosion_Node* get_explosion_tail()
 {
-    g_explosion_tail;
+    return g_explosion_tail;
 }
 
 int remove_explosion(struct Explosion* exp)
@@ -91,7 +92,7 @@ int remove_explosion(struct Explosion* exp)
                 node->next = temp->next;
 
                 free(temp);
-                printf("Removed explosion\n");
+                //printf("Removed explosion\n");
                 return 0;
             }
         }
@@ -99,10 +100,11 @@ int remove_explosion(struct Explosion* exp)
         {
             if (node->explosion == exp)
             {
-                printf("Removed one and only explosion\n");
+                //printf("Removed one and only explosion\n");
                 free(node);
                 g_explosion_tail = NULL;
                 g_explosion_head = NULL;
+                return 0;
             }
         }
 

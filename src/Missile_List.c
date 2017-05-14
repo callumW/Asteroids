@@ -40,6 +40,7 @@ int add_missile(float sx, float sy, float a, long ltime, long dtime, long eradiu
 	node->missile->explosion_radius = eradius;
 	node->missile->firing_id = id;
 	node->next = NULL;
+    node->missile->alive = TRUE;
 
 	if (g_missile_head == NULL)
 	{
@@ -55,7 +56,7 @@ int add_missile(float sx, float sy, float a, long ltime, long dtime, long eradiu
 
 int remove_missile(struct Missile* mis)
 {
-
+    printf("removing missile\n");
     if (mis == NULL)
         return -1;
 
@@ -84,9 +85,14 @@ int remove_missile(struct Missile* mis)
         }
         else
         {
-            free(node);
-            g_missile_head = NULL;
-            g_missile_tail = NULL;
+            if (node->missile == mis)
+            {
+                //printf("Removed one and only explosion\n");
+                free(node);
+                g_missile_tail = NULL;
+                g_missile_head = NULL;
+                return 0;
+            }
         }
 
         node = node->next;

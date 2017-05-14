@@ -70,7 +70,7 @@ void draw_linef(float x1, float y1, float x2, float y2)
 void draw_circlef(float x, float y, float radius)
 {
     int i;
-    glBegin(GL_LINE_LOOP);
+    glBegin(GL_POLYGON);
         for (i = 0; i < 360; i++)
         {
             glVertex2f(x + sin(i * (3.14 / 180)) * radius, y + cos(i * (3.14 / 180)) * radius);
