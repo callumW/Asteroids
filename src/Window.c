@@ -75,7 +75,7 @@ int initialise_window(const struct Game_setting* set)
     gc_win_width = set->width;
     gc_win_height = set->height;
 
-    if (SDL_Init(SDL_INIT_VIDEO|SDL_INIT_TIMER|SDL_INIT_EVENTS) != 0) {
+    if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
         printf("Failed to initialise SDL!\nError: %s\n", SDL_GetError());
         return 1;
     }

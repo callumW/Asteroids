@@ -2,6 +2,9 @@ cmake_minimum_required (VERSION 2.8)
 project (Asteroids C)
 
 set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -g")
+set(SDL_MIXER_INCLUDE_DIR "SDL_Mixer includes" CACHE PATH "description")
+set(SDL_MIXER_LIB "SDL_Mixer lib" CACHE FILEPATH "description")
+
 
 file (GLOB SRC_FILES src/*.c)
 
@@ -26,5 +29,5 @@ message ("SDL2 Include path: ${SDL2_INCLUDE_DIR}")
 message ("SDL2 Links: ${SDL2_LIBRARY}")
 
 
-include_directories (${SDL2_INCLUDE_DIR} ${OPENGL_INCLUDE_DIR})
-target_link_libraries (Asteroids ${SDL2_LIBRARY} ${OPENGL_LIBRARY})
+include_directories (${SDL2_INCLUDE_DIR} ${OPENGL_INCLUDE_DIR} ${SDL_MIXER_INCLUDE_DIR})
+target_link_libraries (Asteroids ${SDL2_LIBRARY} ${OPENGL_LIBRARY} ${SDL_MIXER_LIB})
