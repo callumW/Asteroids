@@ -61,32 +61,52 @@ int remove_missile(struct Missile* mis)
         return -1;
 
     struct Missile_Node* node = get_missile_head();
+    struct Missile_Node* previous_node = NULL;
 
     while (node != NULL)
     {
         if (node->next != NULL)
         {
-            if (node->next->missile == mis)
-            {            
-                struct Missile_Node* temp = node->next;
-
-                /* The node to be removed is the tail*/
-                if (temp->next == NULL)
+            if (node->missile == mis)
+            {
+                //not at tail, so we need point previous node to next node.
+                if (previous_node == NULL)
                 {
-                    //we need to update the tail too
-                    g_missile_tail = node;
+                    //we're at the head
+                    g_missile_head = node->next;
+                    free(node);
+                    return 0;
                 }
-
-                node->next = temp->next;
-
-                free(temp);
-                return 0;
+                else
+                {
+                    //not at tail nor at head
+                    previous_node->next = node->next;
+                    free(node);
+                    return 0;
+                }
             }
+            //else if (node->next->missile == mis)
+            //{
+            //    struct Missile_Node* temp = node->next;
+
+            //    /* The node to be removed is the tail*/
+            //    if (temp->next == NULL)
+            //    {
+            //        //we need to update the tail too
+            //        g_missile_tail = node;
+            //    }
+
+            //    node->next = temp->next;
+
+            //    free(temp);
+            //    return 0;
+            //}
         }
         else
         {
             if (node->missile == mis)
             {
+                //printf("Found Missile to remove\n");
                 //printf("Removed one and only explosion\n");
                 free(node);
                 g_missile_tail = NULL;
@@ -95,6 +115,7 @@ int remove_missile(struct Missile* mis)
             }
         }
 
+        previous_node = node;
         node = node->next;
     }
 

@@ -73,28 +73,47 @@ int remove_explosion(struct Explosion* exp)
         return -1;
 
     struct Explosion_Node* node = get_explosion_head();
+    struct Explosion_Node* previous_node = NULL;
 
     while (node != NULL)
     {
         if (node->next != NULL)
         {
-            if (node->next->explosion == exp)
+            if (node->explosion == exp)
             {
-                struct Explosion_Node* temp = node->next;
-
-                /* The node to be removed is the tail*/
-                if (temp->next == NULL)
+                //not at tail, so we need point previous node to next node.
+                if (previous_node == NULL)
                 {
-                    //we need to update the tail too
-                    g_explosion_tail = node;
+                    //we're at the head
+                    g_explosion_head = node->next;
+                    free(node);
+                    return 0;
                 }
-
-                node->next = temp->next;
-
-                free(temp);
-                //printf("Removed explosion\n");
-                return 0;
+                else
+                {
+                    //not at tail nor at head
+                    previous_node->next = node->next;
+                    free(node);
+                    return 0;
+                }
             }
+            //if (node->next->explosion == exp)
+            //{
+            //    struct Explosion_Node* temp = node->next;
+
+            //    /* The node to be removed is the tail*/
+            //    if (temp->next == NULL)
+            //    {
+            //        //we need to update the tail too
+            //        g_explosion_tail = node;
+            //    }
+
+            //    node->next = temp->next;
+
+            //    free(temp);
+            //    //printf("Removed explosion\n");
+            //    return 0;
+            //}
         }
         else
         {
