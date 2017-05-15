@@ -112,6 +112,13 @@ void draw_missiles()
     float x1, y1, x2, y2;
     while (current_missile != NULL)
     {
+        if (current_missile->missile == NULL)
+        {
+            printf("One of our missile is null?\n");
+            current_missile = current_missile->next;
+            return -1;
+        }
+
         x1 = current_missile->missile->start_x;
         y1 = current_missile->missile->start_y;
 
@@ -120,7 +127,7 @@ void draw_missiles()
 
         //draw_line((int) x1, (int) y1, (int) x2, (int) y2);
         draw_linef(x1, y1, x2, y2);
-        draw_line(0, 0, 10, 10);
+        //draw_line(0, 0, 10, 10);
         current_missile = current_missile->next;
     }
 }

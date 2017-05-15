@@ -106,11 +106,21 @@ int remove_missile(struct Missile* mis)
         {
             if (node->missile == mis)
             {
-                //printf("Found Missile to remove\n");
-                //printf("Removed one and only explosion\n");
-                free(node);
-                g_missile_tail = NULL;
-                g_missile_head = NULL;
+                if (g_missile_head == g_missile_tail)
+                {
+                    printf("Deleting only missile\n");
+                    free(node);
+                    g_missile_head = NULL;
+                    g_missile_tail = NULL;
+                }
+                else 
+                {
+                    printf("Removing tail\n");
+                    free(node);
+                    node = NULL;
+                    g_missile_tail = previous_node;
+                }
+                
                 return 0;
             }
         }
