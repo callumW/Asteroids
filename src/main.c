@@ -111,6 +111,7 @@ int main(int argc, char** argv)
         show_screen();
     }
 
+    clean_up();
     SDL_Quit();
     return 0;
 }

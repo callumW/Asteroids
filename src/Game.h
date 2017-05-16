@@ -66,6 +66,7 @@ extern int g_scan_start_time;
 extern int g_last_scan_end;
 extern BOOL g_scanning;
 extern Mix_Chunk* launch_sound;
+extern Mix_Chunk* bomb_sound;
 
 extern float missile_speed;
 
@@ -136,4 +137,6 @@ void cull_missiles();
     Load Audio tracks
 */
 void load_audio_files();
+
+void clean_up();
 #endif

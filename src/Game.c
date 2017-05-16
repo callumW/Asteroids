@@ -71,6 +71,7 @@ BOOL g_scanning = FALSE;
 float missile_speed = 0.1f;
 
 Mix_Chunk* launch_sound = NULL;
+Mix_Chunk* bomb_sound = NULL;
 
 void draw_all()
 {
@@ -147,6 +148,10 @@ void update_missile(struct Missile* missile)
     {
         missile->alive = FALSE;
         add_explosion(missile->x, missile->y,  missile->explosion_radius, 350, 0);
+        if (Mix_PlayChannel(-1, bomb_sound, 0) == -1)
+        {
+            printf("failed to play bomb sound!\n");
+        }
     }
 }
 
@@ -259,11 +264,17 @@ void cull_missiles()
 
 void load_audio_files()
 {
-    launch_sound = Mix_LoadWAV("media/missile_launch.WAV");
+    launch_sound = Mix_LoadWAV("media/missile_launch2.WAV");
+    bomb_sound = Mix_LoadWAV("media/bomb_sound.WAV");
 
-    if (launch_sound == NULL)
+    if (launch_sound == NULL || bomb_sound == NULL)
     {
         printf("Failed to load launch sound\n");
         return;
     }
+}
+void clean_up()
+{
+    Mix_FreeChunk(launch_sound);
+    Mix_FreeChunk(bomb_sound);
 }
