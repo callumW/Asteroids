@@ -48,6 +48,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #define GAME_H
 
 #include "SDL.h"
+#include "SDL_Mixer.h"
 #include "Window.h"
 #include "Input_handling.h"
 #include "Bool.h"
@@ -64,6 +65,7 @@ extern const int gc_radar_beam_delay;
 extern int g_scan_start_time;
 extern int g_last_scan_end;
 extern BOOL g_scanning;
+extern Mix_Chunk* launch_sound;
 
 extern float missile_speed;
 
@@ -129,4 +131,9 @@ void unfire_missile();
     Remove expired missiles
 */
 void cull_missiles();
+
+/*
+    Load Audio tracks
+*/
+void load_audio_files();
 #endif

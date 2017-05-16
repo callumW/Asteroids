@@ -47,6 +47,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 #include "Window.h"
 #include "Game.h"
+#include "SDL_mixer.h"
 #include <stdio.h>
 #include <math.h>
 SDL_Window* g_window = NULL;
@@ -111,6 +112,19 @@ int initialise_window(const struct Game_setting* set)
         return 3;
     }
 */
+
+    if (SDL_AudioInit("directsound") == -1)
+    {
+        printf("More fuckery\n");
+        return 7;
+    }
+
+    if (Mix_OpenAudio(22050, MIX_DEFAULT_CHANNELS, 2, 4096) == -1)
+    {
+        printf("Failed to initialise SDL_Mixer!\n");
+        printf("SDL_Mixer error: %s", Mix_GetError());
+        return 6;
+    }
     return 0;
 }
 

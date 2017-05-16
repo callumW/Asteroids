@@ -1,4 +1,6 @@
 #include "Missile_List.h"
+#include "Game.h"
+
 #include <stdlib.h>
 
 struct Missile_Node* g_missile_head = NULL;
