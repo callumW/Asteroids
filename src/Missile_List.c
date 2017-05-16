@@ -74,6 +74,7 @@ int remove_missile(struct Missile* mis)
                 {
                     //we're at the head
                     g_missile_head = node->next;
+                    free(node->missile);
                     free(node);
                     return 0;
                 }
@@ -81,6 +82,7 @@ int remove_missile(struct Missile* mis)
                 {
                     //not at tail nor at head
                     previous_node->next = node->next;
+                    free(node->missile);
                     free(node);
                     return 0;
                 }
@@ -109,6 +111,7 @@ int remove_missile(struct Missile* mis)
                 if (g_missile_head == g_missile_tail)
                 {
                     printf("Deleting only missile\n");
+                    free(node->missile);
                     free(node);
                     g_missile_head = NULL;
                     g_missile_tail = NULL;
@@ -116,9 +119,11 @@ int remove_missile(struct Missile* mis)
                 else 
                 {
                     printf("Removing tail\n");
+                    free(node->missile);
                     free(node);
                     node = NULL;
                     g_missile_tail = previous_node;
+                    previous_node->next = NULL;
                 }
                 
                 return 0;

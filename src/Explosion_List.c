@@ -86,7 +86,9 @@ int remove_explosion(struct Explosion* exp)
                 {
                     //we're at the head
                     g_explosion_head = node->next;
+                    free(node->explosion);
                     free(node);
+                    
                     node = NULL;
                     return 0;
                 }
@@ -94,7 +96,9 @@ int remove_explosion(struct Explosion* exp)
                 {
                     //not at tail nor at head
                     previous_node->next = node->next;
+                    free(node->explosion);
                     free(node);
+                    
                     node = NULL;
                     return 0;
                 }
@@ -124,16 +128,21 @@ int remove_explosion(struct Explosion* exp)
             {
                 if (g_explosion_head == g_explosion_tail)
                 {
+                    free(node->explosion);
                     free(node);
+                    
                     node = NULL;
                     g_explosion_head = NULL;
                     g_explosion_tail = NULL;
                 }
                 else
                 {
+                    free(node->explosion);
                     free(node);
+
                     node = NULL;
                     g_explosion_tail = previous_node;
+                    previous_node->next = NULL;
                 }
                 return 0;
             }
