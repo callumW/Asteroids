@@ -88,6 +88,7 @@ int main(int argc, char** argv)
     }
     init_timers();
     init_hud();
+    load_audio_files();
 
     add_explosion(40.0f, 40.0f, 30.0f, 500, 0);
 
