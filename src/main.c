@@ -94,6 +94,11 @@ int main(int argc, char** argv)
 
     last_fps_check = SDL_GetTicks();
     print_fps(999);
+
+    if (Mix_PlayMusic(backtrack, -1) == -1)
+    {
+        printf("Could not play music\n");
+    }
     while (g_running == TRUE) {
         update_timers();
         handle_input();

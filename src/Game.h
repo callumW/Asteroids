@@ -68,6 +68,8 @@ extern BOOL g_scanning;
 extern Mix_Chunk* launch_sound;
 extern Mix_Chunk* bomb_sound;
 
+extern Mix_Music* backtrack;
+
 extern float missile_speed;
 
 /*
